@@ -1,3 +1,208 @@
-I'am Sargis.
-I'm 16 years old.
-I live in Charencavan.
+package com.company;
+
+import javafx.application.Application;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+
+
+public class Main extends Application {
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+    public String k= " ";
+    public int a,b,c = 0;
+    @Override
+
+    public void start(Stage primaryStage) throws Exception {
+        Canvas canvas = new Canvas(235, 280);
+        Button inpt = new  Button();
+        inpt.setTranslateX(5);
+        inpt.setTranslateY(5);
+        inpt.setPrefWidth(225);
+        inpt.setPrefHeight(50);
+        Button nums0 = createbtn(5,225,52.25,50,"0");
+        nums0.setOnAction(event ->{
+        a = 0;
+        a=(a*10)+a;
+        inpt.setText(String.valueOf(a));
+        });
+
+        Button nums1 = createbtn(5,170,52.25,50,"1");
+        nums1.setOnAction(event ->{
+            a = 1;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+
+        });
+
+        Button nums2 = createbtn(62.25,170,52.25,50,"2");
+        nums2.setOnAction(event ->{
+            a = 2;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+
+        });
+
+        Button nums3 = createbtn(119.5,170,52.25,50,"3");
+        nums3.setOnAction(event ->{
+
+            a = 3;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+
+        });
+
+        Button nums4 = createbtn(5,115,52.25,50,"4");
+        nums4.setOnAction(event ->{
+            a = 4;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+
+        });
+
+        Button nums5 = createbtn(62.25,115,52.25,50,"5");
+        nums5.setOnAction(event ->{
+            a = 5;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+
+        });
+
+        Button nums6 = createbtn(119.5,115,52.25,50,"6");
+        nums6.setOnAction(event ->{
+
+            a = 6;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+
+        });
+
+        Button nums7 = createbtn(5,60,52.25,50,"7");
+        nums7.setOnAction(event ->{
+            a = 7;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+        });
+
+        Button nums8 = createbtn(62.25,60,52.25,50,"8");
+        nums8.setOnAction(event ->{
+            a = 8;
+            a=(a*10)+a;
+            inpt.setText(String.valueOf(a));
+        });
+
+        Button nums9 = createbtn(119.5,60,52.25,50,"9");
+        nums9.setOnAction(event ->{
+
+            a = 9;
+            a=(a*10)+a;
+           
+            inpt.setText(String.valueOf(a));
+
+        });
+switch(k){
+    case"*":
+
+
+
+    break;
+}
+//nshanner
+        Button multiplication = createbtn(176.75,60,52.25,50," * ");
+        multiplication.setOnAction(event ->{
+            k = "*";
+            inpt.setText(k);
+
+
+        });
+        Button division = createbtn(176.75,115,52.25,50," / ");
+        division.setOnAction(event ->{
+            k= " / ";
+            inpt.setText(k);
+
+
+        });
+        Button sum = createbtn(176.75,170,52.25,50," + ");
+        sum.setOnAction(event ->{
+            k = " + ";
+            inpt.setText(k);
+
+
+
+        });
+
+        Button remove = createbtn(176.75,225,52.25,50," - ");
+        remove.setOnAction(event ->{
+            k= " - ";
+            inpt.setText(k);
+
+
+        });
+        Button equally = createbtn(119.5,225,52.25,50," = ");
+        equally.setOnAction(event ->{
+            k=" = ";
+            inpt.setText(String.valueOf(c));
+
+
+        });
+        Button del = createbtn(62.25,225,52.25,50," DEL ");
+        del.setOnAction(event ->{
+        a = 0;
+inpt.setText(String.valueOf(a));
+
+
+        });
+
+        Group root = new Group();
+        //show buttons(NUM)
+        root.getChildren().add(nums1);
+        root.getChildren().add(nums2);
+        root.getChildren().add(nums3);
+        root.getChildren().add(nums4);
+        root.getChildren().add(nums5);
+        root.getChildren().add(nums6);
+        root.getChildren().add(nums7);
+        root.getChildren().add(nums8);
+        root.getChildren().add(nums9);
+        root.getChildren().add(nums0);
+
+        //show buttons(nshanner)
+        root.getChildren().add(equally);
+        root.getChildren().add(multiplication);
+        root.getChildren().add(division);
+        root.getChildren().add(sum);
+        root.getChildren().add(remove);
+        root.getChildren().add(del);
+        root.getChildren().add(inpt);
+
+
+
+
+
+
+        Scene scene = new Scene(root, 235, 280);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    public Button createbtn(double x, double y, double w,double h,String num){
+        Button btn = new  Button();
+        btn.setTranslateX(x);
+        btn.setTranslateY(y);
+        btn.setPrefWidth(w);
+        btn.setPrefHeight(h);
+        btn.setText(num);
+        btn.setTextFill(Color.GREEN);
+        return btn;
+    }
+
+
+
+
+}
+
